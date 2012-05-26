@@ -66,4 +66,14 @@ class Validation extends \Fuel\Core\Validation {
 		return FALSE;
 	}
 	
+	public function _validation_datetime_timestap($val, $options = 'Y-m-d') {
+		try {
+			$dateTime = DateTime::createFromFormat($options, $val);
+			return $dateTime->format('U');
+		}
+		catch (Exception $e) {
+			return FALSE;
+		}
+	}
+	
 }
