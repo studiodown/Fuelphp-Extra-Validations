@@ -59,7 +59,7 @@ class Validation extends \Fuel\Core\Validation {
 			}
 			$return = array();
 			foreach ($val as $v) {
-				$return[] = $model::find()->where($field,$val)->get_one();
+				$return[] = $model::find()->where($field,$v)->get_one();
 			}
 			return $return;
 		}
