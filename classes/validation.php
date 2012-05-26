@@ -68,7 +68,7 @@ class Validation extends \Fuel\Core\Validation {
 	
 	public function _validation_datetime_timestamp($val, $options = 'Y-m-d') {
 		try {
-			$dateTime = DateTime::createFromFormat($options, $val);
+			$dateTime = \DateTime::createFromFormat($options, $val);
 			return $dateTime->format('U');
 		}
 		catch (Exception $e) {
