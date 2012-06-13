@@ -33,6 +33,7 @@ class Validation extends \Fuel\Core\Validation {
 	}
 	
 	public function _validation_db_exists($val, $options) {
+	   if($val==null) return true;
 		list($table, $field) = explode('.', $options);
 		$result = \DB::select("LOWER (\"$field\")")
 			->where($field, '=', \Str::lower($val))
